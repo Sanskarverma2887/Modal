@@ -1,0 +1,198 @@
+@import "tailwindcss";
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    @apply
+    w-[100vw] h-[100vh] relative
+    overflow-hidden
+     bg-gray-950;
+}
+.circle1{
+    @apply
+    absolute top-[10%] left-[30%]
+    w-[13em] h-[13em] 
+    rounded-[50%]
+
+    ;
+    box-shadow: 0 0 50px #d84869;
+    background: linear-gradient(-25deg, #d84869, #f46641);
+  /* animation: circle1Animation 15s ease-in-out  infinite ; */
+    animation-name: circle1Animation ;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    
+}
+@keyframes circle1Animation {
+    0% {
+        transform: translate(0, 0) scale(1);
+        box-shadow: 0 0 50px #d84869;
+    }
+    50% {
+        transform: translate(20px, -40px) scale(1.11);
+        box-shadow: 0 0 60px #f46641;
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+        box-shadow: 0 0 50px #d84869;
+    }
+}
+.circle2 {
+    @apply absolute w-[19em] h-[19em] rounded-[50%];
+    bottom: 5%;
+    right: 30%;
+    background: linear-gradient(-25deg, #5648d8, #8641f4);
+    box-shadow: 0 0 50px #5648d8;
+    /* animation: circle2Animation 10s ease-in-out infinite ; */
+    animation-name: circle2Animation ;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes circle2Animation {
+    0% {
+        transform: translate(0, 0) ;
+        box-shadow: 0 0 50px #5648d8;
+    }
+    50% {
+        transform: translate(10px, -40px)  rotate(3deg);
+        box-shadow: 0 0 60px #8641f4;
+    }
+    100% {
+        transform: translate(0, 0) ;
+        box-shadow: 0 0 50px #5648d8;
+    }
+}
+.card{
+    @apply
+    absolute  z-40
+    h-[450px] 
+    pt-[25px] pb-[25px] pl-[50px] pr-[50px]
+    bg-[#ffffff1a] border-2 border-[#ffffff30] rounded-[15px] backdrop-blur-[15px]
+    flex flex-col justify-around items-center;
+}
+.card-img{
+    @apply
+    rounded-full border-2 border-[#ffffff30]
+    h-[150px] w-[150px] object-cover;
+}
+.name{
+    @apply
+    text-[2rem] text-white
+    font-bold;
+}
+.designation{
+    @apply
+    font-bold
+   translate-y-[-1.2rem]
+    text-[#ffffff85];
+}
+.bottom-grp{
+    @apply
+    flex flex-row gap-4 
+    text-[#ffffffb9];
+}
+.btn{
+    @apply
+    relative z-1
+    w-[150px]
+    border-2 border-[#ffffffb9] rounded-[4px]
+    cursor-pointer
+    pt-[9px] pb-[9px] pl-[15px] pr-[15px]
+}
+.btn::before{
+    content: "";
+    background-color: #ffffff9c;
+    /* color: #e84949; */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    /* z-index: -1; */
+}
+.btn:hover::before {
+    transform: scaleX(1);
+    transition: 800ms ease-in-out;
+}
+
+.modal{
+    @apply
+    fixed text-white
+    top-[50%] left-[50%] z-[1000] translate-[-50%]
+    w-[500px] h-[150px] 
+    border-2 border-[#ffffff59] rounded-[20px]
+    bg-[#00000088] backdrop-blur-[10px]
+    pt-[20px] pb-[20px] pl-[25px] pr-[25px]
+    scale-0;
+    /* opacity-0 */
+    transition: 500ms all ease-in-out;
+}
+.modal-header{
+    @apply
+    text-xl
+    flex flex-row justify-between items-center
+    mb-[25px] pb-[12px] border-b-1 border-[#ffffff88]
+}
+.icon-container{
+    @apply
+    text-[25px]
+    flex flex-row justify-evenly items-center
+}
+.fa-instagram:hover{
+    @apply
+    scale-130
+    text-[#cb2770];
+    transition:200ms all;
+}
+.fa-whatsapp:hover{
+    @apply
+    scale-130
+    text-[#2fe664];
+    transition:200ms all;
+}
+.fa-twitter:hover{
+    @apply
+    scale-130
+    text-[#0081c2];
+    transition:200ms all;
+}
+.fa-meta:hover{
+    @apply
+    scale-130
+    text-[#002dc2];
+    transition:200ms all;
+}
+.fa-github:hover{
+    @apply
+    scale-130
+    text-white;
+    transition:250ms all;
+}
+.fa-x{
+    @apply
+    text-[18px]
+}
+.overlay{
+    @apply
+    fixed w-[100vw] h-[100vh] top-0 z-50
+    bg-[#5f5f5f83] backdrop-blur-xs;
+    opacity:0;
+    transition:opacity 500ms  ease-in-out;
+    pointer-events: none;
+}
+.active{
+    scale: 1;
+}
+.active-overlay{
+    opacity: 1;
+    pointer-events: auto;
+}

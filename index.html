@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanskar Verma</title>
+    <link rel="shortcut icon" href="user.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./src/input.css">
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+        <div class="wrapper">
+            <div class="circle1 "></div>
+            <div class="circle2"></div>
+            <div class="w-full h-full flex justify-center items-center">
+            <div class="card">
+                <img src="./images/IMG_3513.png" alt="" class="card-img">
+                <div class="name"><h2>Sanskar Verma</h2></div>
+                <div class="designation">Software Engineer</div>
+                <div class="bottom-grp">
+                    <button class="btn" onclick="active()"><i></i> <span>Share My Profile</span></button>
+                    <button class="btn">Follow Me</button>
+                </div>
+            </div>
+            </div>
+
+            <div class="modal">
+                <div class="modal-header">
+                    <h1>Share My Profile</h1>
+                    <div class="cursor-pointer" ><i class="fa-solid fa-x" onclick="deactive()"></i></div>
+                </div>
+                <div>
+                    <!-- <h3></h3> -->
+                    <div class="icon-container">
+                        <a href=""><i class="fa-brands fa-instagram "></i></a>
+                        <a href=""><i class="fa-brands fa-whatsapp "></i></a>
+                        <a href=""><i class="fa-brands fa-twitter "></i></a>
+                        <a href=""><i class="fa-brands fa-meta "></i></a>
+                        <a href=""><i class="fa-brands fa-github "></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- overlay -->
+            <div class="overlay" onclick="deactive()"></div>
+
+        </div>
+</body>
+<script src="./src/script.js"></script>
+</html>
